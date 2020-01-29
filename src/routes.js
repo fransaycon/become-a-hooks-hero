@@ -7,5 +7,6 @@ export const ClientRoutes = {
   USING_REF: "/using-ref",
   USING_EFFECTS: "/using-effects",
   USING_CONTEXT: "/using-content",
-  PURE_COMPONENTS: "/pure-components"
+  PURE_COMPONENTS: "/pure-components",
+  USING_REDUCERS: "/using-reducers"
 };
