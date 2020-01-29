@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 /**
  * One way to trigger side effects given a state change is by using the useEffect hooks.
@@ -13,6 +13,7 @@ import React, { useState, useEffect } from "react";
 const Timer = () => {
   const [time, setTime] = useState(2020);
   const [timerStart, toggleTimer] = useState(false);
+  const initialMount = useRef(true);
 
   useEffect(() => {
     if (timerStart && time > 0) {
@@ -20,6 +21,19 @@ const Timer = () => {
       return () => clearTimeout(tick);
     }
   }, [time, timerStart]);
+
+  useEffect(() => {
+    console.log("Will only print once per mount!");
+  }, []);
+
+  useEffect(() => {
+    console.log("Will print on mount and every update!");
+    if (initialMount.current) {
+      initialMount.current = false;
+    } else {
+      console.log("Will print only on updates!");
+    }
+  });
 
   return (
     <div>
