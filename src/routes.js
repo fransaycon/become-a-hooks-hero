@@ -4,5 +4,6 @@ export const ClientRoutes = {
   USING_PROPS: "/using-props",
   USING_STATE: "/using-state",
   DESTROYING_STATE: "/destroying-state",
-  USING_REF: "/using-ref"
+  USING_REF: "/using-ref",
+  USING_EFFECTS: "/using-effects"
 };

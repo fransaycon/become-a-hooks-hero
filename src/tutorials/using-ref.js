@@ -5,12 +5,12 @@ import React, { useRef, useState } from "react";
  *
  * The useRef hook gives you the ability to define a reference.
  *
- * Usually, references are used to either point to a dom node or keep a mutable value that won't trigger a rerender.
+ * Usually, references are used to either point to a dom node or keep a mutable value/object that won't trigger a rerender.
  */
 const AlertMe = () => {
   const [submissions, setSubmissions] = useState(0);
   const inputRef = useRef();
-  const previousValue = useRef();
+  const previousValue = useRef("none");
 
   return (
     <div>
@@ -35,7 +35,7 @@ const AlertMe = () => {
           <span>No. of Submissions: {submissions}</span>
         </div>
         <div>
-          <span>Previous Submission: {previousValue.current}</span>
+          <span>Previous Alert After Submission: {previousValue.current}</span>
         </div>
       </div>
     </div>

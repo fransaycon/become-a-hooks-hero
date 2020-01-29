@@ -5,6 +5,7 @@ import UsingProps from "./tutorials/using-props";
 import UsingState from "./tutorials/using-state";
 import DestroyedState from "./tutorials/destroying-state";
 import UsingRef from "./tutorials/using-ref";
+import UsingEffects from "./tutorials/using-effects";
 import { ClientRoutes } from "./routes";
 import styled, { createGlobalStyle } from "styled-components";
 import "typeface-rubik";
@@ -83,7 +84,7 @@ const Home = () => (
       <Item to={ClientRoutes.USING_STATE}>Using States</Item>
       <Item to={ClientRoutes.DESTROYING_STATE}>Destroying State</Item>
       <Item to={ClientRoutes.USING_REF}>Using Ref</Item>
-      <Item to={ClientRoutes.USING_PROPS}>Lorem Ipsum Item</Item>
+      <Item to={ClientRoutes.USING_EFFECTS}>Using Effects</Item>
       <Item to={ClientRoutes.USING_PROPS}>Lorem Ipsum Item</Item>
       <Item to={ClientRoutes.USING_PROPS}>Lorem Ipsum Item</Item>
       <Item to={ClientRoutes.USING_PROPS}>Lorem Ipsum Item</Item>
@@ -109,6 +110,9 @@ const App = () => (
       </Route>
       <Route path={ClientRoutes.USING_REF}>
         <UsingRef />
+      </Route>
+      <Route path={ClientRoutes.USING_EFFECTS}>
+        <UsingEffects />
       </Route>
       <Route path={ClientRoutes.HOME}>
         <Home />
