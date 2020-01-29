@@ -1,7 +1,8 @@
 export const ClientRoutes = {
   HOME: "/",
   HELLO_WORLD: "/hello-world",
-  USE_STATE_ONE: "/use-state-one",
-  USE_STATE_TWO: "/use-state-two",
-  USE_STATE_THREE: "/use-state-three"
+  USING_PROPS: "/using-props",
+  USING_STATE: "/using-state",
+  DESTROYING_STATE: "/destroying-state",
+  USING_REF: "/using-ref"
 };
