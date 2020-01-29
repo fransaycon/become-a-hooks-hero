@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import MayanCalendar from "../atoms/mayan-calendar";
 
 /**
  * One way to trigger side effects given a state change is by using the useEffect hooks.
@@ -16,15 +17,18 @@ const Timer = () => {
   const initialMount = useRef(true);
 
   useEffect(() => {
-    if (timerStart && time > 0) {
-      const tick = setTimeout(() => setTime(t => t - 1), 500);
-      return () => clearTimeout(tick);
-    }
-  }, [time, timerStart]);
-
-  useEffect(() => {
     console.log("Will only print once per mount!");
   }, []);
+
+  useEffect(() => {
+    if (timerStart && time > 0) {
+      const tick = setTimeout(() => setTime(t => t - 1), 500);
+      return () => {
+        console.log("Will print everytime this produces a new effect!");
+        clearTimeout(tick);
+      };
+    }
+  }, [time, timerStart]);
 
   useEffect(() => {
     console.log("Will print on mount and every update!");
@@ -41,6 +45,7 @@ const Timer = () => {
         <span>Time Left: {time}</span>
       </div>
       <button onClick={() => toggleTimer(true)}>Start Timer</button>
+      {time !== 2012 && <MayanCalendar />}
     </div>
   );
 };

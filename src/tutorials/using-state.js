@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 /**
- * Another way for a React component to rerender is a change of state.
+ * Another way for a React component to rerender is triggering states.
  *
  * State are persisted values of a mounted component.
  * To initialize a state, we declare a useState hook.

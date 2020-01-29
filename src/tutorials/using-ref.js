@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
  *
  * The useRef hook gives you the ability to define a reference.
  *
- * Usually, references are used to either point to a dom node or keep a mutable value/object that won't trigger a rerender.
+ * Usually, references are used to either point to a dom node or keep a mutable value/object that won't trigger a rerender when changed.
  */
 const AlertMe = () => {
   const [submissions, setSubmissions] = useState(0);
