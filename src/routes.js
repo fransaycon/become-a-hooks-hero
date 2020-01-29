@@ -8,5 +8,9 @@ export const ClientRoutes = {
   USING_EFFECTS: "/using-effects",
   USING_CONTEXT: "/using-content",
   PURE_COMPONENTS: "/pure-components",
-  USING_REDUCERS: "/using-reducers"
+  USING_REDUCERS: "/using-reducers",
+  USING_MEMO: "/using-memo",
+  USING_CALLBACK: "/using-callback",
+  USING_LAYOUT_EFFECT: "/using-layout",
+  USING_CUSTOM_HOOKS: "/using-custom-hooks"
 };

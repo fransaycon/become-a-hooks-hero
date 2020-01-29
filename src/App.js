@@ -13,6 +13,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import "typeface-rubik";
 import { Item } from "./atoms";
 import GhibliMovies from "./tutorials/using-reducers";
+import ClosestPrimeCalculator from "./tutorials/using-memo";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -91,6 +92,7 @@ const Home = () => (
       <Item to={ClientRoutes.USING_CONTEXT}>Using Contexts</Item>
       <Item to={ClientRoutes.PURE_COMPONENTS}>Pure Components</Item>
       <Item to={ClientRoutes.USING_REDUCERS}>Using Reducers</Item>
+      <Item to={ClientRoutes.USING_MEMO}>Using Memo</Item>
     </Container>
   </ItemContainer>
 );
@@ -125,6 +127,9 @@ const App = () => (
       </Route>
       <Route path={ClientRoutes.USING_REDUCERS}>
         <GhibliMovies />
+      </Route>
+      <Route path={ClientRoutes.USING_MEMO}>
+        <ClosestPrimeCalculator />
       </Route>
       <Route path={ClientRoutes.HOME}>
         <Home />
