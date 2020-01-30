@@ -15,7 +15,6 @@ const StageOne = () => {
       <div>
         <span>Stage-1 Count: {count}</span>
         <button onClick={() => setCount(count + 1)}>INCREASE!</button>
-        <button onClick={() => setCount(count)}>NO CHANGE!</button>
       </div>
       <StageTwo count={count} />
     </div>
@@ -32,7 +31,6 @@ const StageTwo = ({ count }) => {
       <div>
         <span>Stage-2 Count: {twoCount}</span>
         <button onClick={() => setTwoCount(twoCount + 1)}>INCREASE!</button>
-        <button onClick={() => setTwoCount(twoCount)}>NO CHANGE!</button>
       </div>
       <LastStage count={count} />
     </div>
