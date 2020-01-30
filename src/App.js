@@ -17,6 +17,7 @@ import ClosestPrimeCalculator from "./tutorials/using-memo";
 import Farm from "./tutorials/using-callbacks";
 import MeasureTracker from "./tutorials/using-layout-effect";
 import Forms from "./tutorials/using-custom-hooks";
+import TitleFocusWriter from "./tutorials/using-imperative";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -91,6 +92,7 @@ const Home = () => (
       <Item to={ClientRoutes.USING_STATE}>Using States</Item>
       <Item to={ClientRoutes.DESTROYING_STATE}>Destroying State</Item>
       <Item to={ClientRoutes.USING_REF}>Using Ref</Item>
+      <Item to={ClientRoutes.USING_IMPERATIVE}>Using Imperative Refs</Item>
       <Item to={ClientRoutes.USING_EFFECTS}>Using Effects</Item>
       <Item to={ClientRoutes.USING_CONTEXT}>Using Contexts</Item>
       <Item to={ClientRoutes.PURE_COMPONENTS}>Pure Components</Item>
@@ -121,6 +123,9 @@ const App = () => (
       </Route>
       <Route path={ClientRoutes.USING_REF}>
         <UsingRef />
+      </Route>
+      <Route path={ClientRoutes.USING_IMPERATIVE}>
+        <TitleFocusWriter />
       </Route>
       <Route path={ClientRoutes.USING_EFFECTS}>
         <UsingEffects />

@@ -12,5 +12,6 @@ export const ClientRoutes = {
   USING_MEMO: "/using-memo",
   USING_CALLBACK: "/using-callback",
   USING_LAYOUT_EFFECT: "/using-layout",
+  USING_IMPERATIVE: "/using-imperative",
   USING_CUSTOM_HOOKS: "/using-custom-hooks"
 };
