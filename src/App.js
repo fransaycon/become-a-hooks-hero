@@ -15,6 +15,8 @@ import { Item } from "./atoms";
 import GhibliMovies from "./tutorials/using-reducers";
 import ClosestPrimeCalculator from "./tutorials/using-memo";
 import Farm from "./tutorials/using-callbacks";
+import MeasureTracker from "./tutorials/using-layout-effect";
+import Forms from "./tutorials/using-custom-hooks";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -95,6 +97,8 @@ const Home = () => (
       <Item to={ClientRoutes.USING_REDUCERS}>Using Reducers</Item>
       <Item to={ClientRoutes.USING_MEMO}>Using Memo</Item>
       <Item to={ClientRoutes.USING_CALLBACK}>Using Callback</Item>
+      <Item to={ClientRoutes.USING_LAYOUT_EFFECT}>Using Layout Effects</Item>
+      <Item to={ClientRoutes.USING_CUSTOM_HOOKS}>Creating Your Own Hooks</Item>
     </Container>
   </ItemContainer>
 );
@@ -135,6 +139,12 @@ const App = () => (
       </Route>
       <Route path={ClientRoutes.USING_CALLBACK}>
         <Farm />
+      </Route>
+      <Route path={ClientRoutes.USING_LAYOUT_EFFECT}>
+        <MeasureTracker />
+      </Route>
+      <Route path={ClientRoutes.USING_CUSTOM_HOOKS}>
+        <Forms />
       </Route>
       <Route path={ClientRoutes.HOME}>
         <Home />
