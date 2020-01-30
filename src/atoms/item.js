@@ -7,7 +7,8 @@ const StyledLink = styled(Link)`
   align-items: center;
   justify-content: center;
   font-family: Rubik, sans-serif;
-  font-size: 25px;
+  font-size: 30px;
+  text-transform: uppercase;
   box-sizing: border-box;
   height: 300px;
   border-radius: 10px;
@@ -15,6 +16,9 @@ const StyledLink = styled(Link)`
   color: #222222;
   background-color: #e3e3e3;
   transition: all 0.5s ease;
+  opacity: 0.9;
+  font-weight: bold;
+  padding: 20px;
 
   &:hover {
     border: 2px solid #ed2939;

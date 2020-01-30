@@ -24,9 +24,10 @@ import GonnaMount from "./tutorials/checkpoint-effects";
 
 const GlobalStyles = createGlobalStyle`
   body {
-    background-color: #FEFEFE;
+    background-color: #F2F2F2;
     font-family: Rubik, sans-serif;
     margin: 0;
+    background-size: cover;
   }
   
   input {
@@ -43,9 +44,27 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  #header {
+    color: royalblue;
+    font-size: 62px;
+    font-weight: bold;
+    margin: 50px 0px 0px 0px;
+    text-shadow: 1px 1px #FFFFFF;
+    text-shadow: 2px 2px #FFFFFF;
+    text-shadow: 3px 3px #FFFFFF;
+    opacity: 0.95;
+  }
+
   span {
     font-size: 30px;
     margin: 10px;
+  }
+
+  hr {
+    margin: 5px 25% 25px 25%;
+    height: 10px;
+    background-color: royalblue;
+    border: none;
   }
 
   button {
@@ -88,7 +107,8 @@ const Hero = styled.h1`
 
 const Home = () => (
   <ItemContainer>
-    <Hero>Road To Become a React Hooks Hero</Hero>
+    <Hero id="header">Road To Become a React Hooks Hero</Hero>
+    <hr />
     <Container>
       <Item to={ClientRoutes.HELLO_WORLD}>Hello World</Item>
       <Item to={ClientRoutes.USING_PROPS}>Using Props</Item>
