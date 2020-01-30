@@ -1,12 +1,19 @@
 import React from "react";
 
 /**
- * We can pass values to components through props.
+ * There are many types of components in React.
  *
- * Props are readonly and can be passed down however deep you want.
- * Components in react are re-usable and can be called by other components.
+ * Aside from host components, here we have FUNCTIONAL COMPONENTS.
  *
- * React will rerender the specific component whenever props change.
+ * Functional components are custom defined re-usable functions that returns
+ * other functional components and/or host components.
+ *
+ * Only host components can generate a view.
+ *
+ * One way to pass values through components is through the use of props.
+ * Props are attributes that came from the parent.
+ *
+ * You may also define default props.
  */
 
 const Greeting = props => <h1>Hello {props.name}</h1>;
