@@ -1,21 +1,25 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
+/**
+ * What's wrong with me?
+ * What's the fix?
+ */
 const useForm = submitCallback => {
-  const values = useRef({});
+  const [values, setValues] = useState({});
 
   const handleSubmit = event => {
     event.preventDefault();
-    submitCallback(values.current);
+    submitCallback(values);
   };
 
   const handleChange = event => {
     event.persist();
 
     const { name, value } = event.target;
-    values.current = { ...values.current, [name]: value };
+    setValues({ ...values, [name]: value });
   };
 
-  return { values: values.current, handleChange, handleSubmit };
+  return { values, handleChange, handleSubmit };
 };
 
 const CheckPointForm = () => {
