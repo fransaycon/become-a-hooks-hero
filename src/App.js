@@ -18,6 +18,9 @@ import Farm from "./tutorials/using-callbacks";
 import MeasureTracker from "./tutorials/using-layout-effect";
 import Forms from "./tutorials/using-custom-hooks";
 import TitleFocusWriter from "./tutorials/using-imperative";
+import CheckPointForm from "./tutorials/checkpoint-custom";
+import CheckPointState from "./tutorials/checkpoint-state";
+import GonnaMount from "./tutorials/checkpoint-effects";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -91,16 +94,19 @@ const Home = () => (
       <Item to={ClientRoutes.USING_PROPS}>Using Props</Item>
       <Item to={ClientRoutes.USING_STATE}>Using States</Item>
       <Item to={ClientRoutes.DESTROYING_STATE}>Destroying State</Item>
+      <Item to={ClientRoutes.CHECKPOINT_STATE}>CHECKPOINT #1</Item>
       <Item to={ClientRoutes.USING_REF}>Using Ref</Item>
       <Item to={ClientRoutes.USING_IMPERATIVE}>Using Imperative Refs</Item>
       <Item to={ClientRoutes.USING_EFFECTS}>Using Effects</Item>
       <Item to={ClientRoutes.USING_LAYOUT_EFFECT}>Using Layout Effects</Item>
+      <Item to={ClientRoutes.CHECKPOINT_EFFECTS}>CHECKPOINT #2</Item>
       <Item to={ClientRoutes.USING_CONTEXT}>Using Contexts</Item>
       <Item to={ClientRoutes.PURE_COMPONENTS}>Pure Components</Item>
       <Item to={ClientRoutes.USING_REDUCERS}>Using Reducers</Item>
       <Item to={ClientRoutes.USING_MEMO}>Using Memo</Item>
       <Item to={ClientRoutes.USING_CALLBACK}>Using Callback</Item>
       <Item to={ClientRoutes.USING_CUSTOM_HOOKS}>Creating Your Own Hooks</Item>
+      <Item to={ClientRoutes.CHECKPOINT_CUSTOM}>CHECKPOINT #3</Item>
     </Container>
   </ItemContainer>
 );
@@ -150,6 +156,15 @@ const App = () => (
       </Route>
       <Route path={ClientRoutes.USING_CUSTOM_HOOKS}>
         <Forms />
+      </Route>
+      <Route path={ClientRoutes.CHECKPOINT_STATE}>
+        <CheckPointState />
+      </Route>
+      <Route path={ClientRoutes.CHECKPOINT_EFFECTS}>
+        <GonnaMount />
+      </Route>
+      <Route path={ClientRoutes.CHECKPOINT_CUSTOM}>
+        <CheckPointForm />
       </Route>
       <Route path={ClientRoutes.HOME}>
         <Home />
