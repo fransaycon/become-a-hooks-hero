@@ -7,6 +7,7 @@ const initialState = {
   success: false,
   data: null
 };
+
 const ApiReducer = (state, action) => {
   switch (action.type) {
     case "FETCH_LOADING":
@@ -54,7 +55,7 @@ const GhibliMovies = () => {
       {reducer.success && !!reducer.data && (
         <ul>
           {reducer.data.map(movie => (
-            <li>{movie.title}</li>
+            <li key={movie.id}>{movie.title}</li>
           ))}
         </ul>
       )}
