@@ -59,9 +59,9 @@ const Farm = () => {
     ]);
   };
 
-  const sayThankYou = () => {
+  const sayThankYou = useCallback(() => {
     alert("Thank You!");
-  };
+  }, []);
 
   return (
     <Farmer
