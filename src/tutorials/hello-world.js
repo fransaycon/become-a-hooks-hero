@@ -3,19 +3,17 @@ import React from "react";
 /**
  * React is a javascript library for building user-interfaces.
  *
- * In React,
- * We have what we call host components ( built-in components )
+ * We make use of host components to generate a view.
  *
- * Dependent on the environment you intend to use React, these components
- * are parsed into objects that host can interpret.
+ * Host components differ per platform.
  *
- * For the web we have,
- * div, input, h1, span, a, etc.
+ * In the web browsers we have,
+ * div, input, span, ul, h1, button, etc.
  *
- * For mobile, (React-Native),
- * Text, Stylesheet, TouchableOpacity, View, etc.
+ * In mobile using React-Native,
+ * Text, View, Button, etc.
  *
- * We use JSX to better our lives*
+ * And we have the option to use JSX to better our lives*
  */
 
 const HelloWorld = () => <h1>Hello World!</h1>;
