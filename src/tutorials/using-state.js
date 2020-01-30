@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 
 /**
- * Another way for a React component to rerender is triggering states.
+ * A component in React follows a specific lifecycle.
  *
- * State are persisted values of a mounted component.
- * To initialize a state, we declare a useState hook.
+ * For now, consider these,
+ * When it mounts. (appears)
+ * When it unmounts. (disappears)
+ * When it updates. (rerender)
  *
- * Hooks gives you access to the lifecycles of React.
+ * React components by default rerenders when its state or props change
+ * and IF ITS PARENT RERENDERS.
  *
- * Whenever React rerenders, it runs the function again.
+ * State is a value that persist every render as long as the component is still mounted.
+ * To declare a state, we need to use a hook called useState.
+ *
+ * Hooks gives access to the React state and lifecycles.
+ * When a component rerenders, the functional component is executed once more.
  */
 
 const Counter = () => {

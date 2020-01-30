@@ -1,5 +1,15 @@
 import React, { useRef, useImperativeHandle, forwardRef } from "react";
 
+/**
+ * What if we want to define a ref prop for a FUNCTIONAL COMPONENT?
+ *
+ * forwardRef and useImperativeHandle to the rescue.
+ *
+ * forwardRef from the name itself makes the ref property available for the functional component.
+ * useImperativeHandle defines what the ref can do.
+ *
+ * Most of the time you don't need this.
+ */
 const Input = forwardRef((props, ref) => {
   const inputRef = useRef("");
 

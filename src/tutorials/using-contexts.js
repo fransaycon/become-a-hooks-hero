@@ -1,5 +1,13 @@
 import React, { createContext, useState, useContext } from "react";
 
+/**
+ * Contexts are another way to share values among children.
+ *
+ * It can be cumbersome to keep on drilling the props to its final destination.
+ *
+ * Context values are passed down through the use of Provider components.
+ * Context values persist as long as the provider is still mounted.
+ */
 const BlessingsContext = createContext();
 
 const BlessingsProvider = ({ children }) => {

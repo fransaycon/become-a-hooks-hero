@@ -1,6 +1,18 @@
 import React, { useReducer } from "react";
 import axios from "axios";
 
+/**
+ * Another way to declare state is through the use of reducers.
+ *
+ * To have access to state reducers, we make use of the hook useReducers.
+ * Since several setStates trigger a rerender, we could compile all state changes into one using reducers.
+ *
+ * Three concepts to take into heart,
+ * STORE - contains your data
+ * ACTIONS - calls a reducer
+ * REDUCERS - updates the store
+ */
+
 const initialState = {
   loading: false,
   error: null,
@@ -32,7 +44,7 @@ const ApiReducer = (state, action) => {
 };
 
 const GhibliMovies = () => {
-  const [reducer, dispatch] = useReducer(ApiReducer, initialState);
+  const [store, dispatch] = useReducer(ApiReducer, initialState);
 
   const fetchMovies = async () => {
     dispatch({ type: "FETCH_LOADING" });
@@ -51,15 +63,15 @@ const GhibliMovies = () => {
   return (
     <div>
       <button onClick={fetchMovies}>Fetch Movies</button>
-      {reducer.loading && <span>LOADING...</span>}
-      {reducer.success && !!reducer.data && (
+      {store.loading && <span>LOADING...</span>}
+      {store.success && !!store.data && (
         <ul>
-          {reducer.data.map(movie => (
+          {store.data.map(movie => (
             <li key={movie.id}>{movie.title}</li>
           ))}
         </ul>
       )}
-      {!!reducer.error && <span>{reducer.error}</span>}
+      {!!store.error && <span>{store.error}</span>}
     </div>
   );
 };

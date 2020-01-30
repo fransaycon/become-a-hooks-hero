@@ -1,5 +1,16 @@
 import React, { useState, memo, useCallback } from "react";
 
+/**
+ * We sometimes pass a function to a pure component.
+ * In javascript, functions inside functions get new references every time
+ * the parent function reruns.
+ *r
+ * We make use of the hook useCallback to persist the function reference across enders
+ * as long as the component is still mounted.
+ *
+ * We could also use the hook to trigger a call back if the reference of a host component
+ * is available.
+ */
 const Customer = memo(({ sayThankYou }) => {
   console.log("CUSTOMER IS RENDERED!");
   const callbackRef = useCallback(node => {
@@ -48,9 +59,9 @@ const Farm = () => {
     ]);
   };
 
-  const sayThankYou = useCallback(() => {
+  const sayThankYou = () => {
     alert("Thank You!");
-  }, []);
+  };
 
   return (
     <Farmer

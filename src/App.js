@@ -94,12 +94,12 @@ const Home = () => (
       <Item to={ClientRoutes.USING_REF}>Using Ref</Item>
       <Item to={ClientRoutes.USING_IMPERATIVE}>Using Imperative Refs</Item>
       <Item to={ClientRoutes.USING_EFFECTS}>Using Effects</Item>
+      <Item to={ClientRoutes.USING_LAYOUT_EFFECT}>Using Layout Effects</Item>
       <Item to={ClientRoutes.USING_CONTEXT}>Using Contexts</Item>
       <Item to={ClientRoutes.PURE_COMPONENTS}>Pure Components</Item>
       <Item to={ClientRoutes.USING_REDUCERS}>Using Reducers</Item>
       <Item to={ClientRoutes.USING_MEMO}>Using Memo</Item>
       <Item to={ClientRoutes.USING_CALLBACK}>Using Callback</Item>
-      <Item to={ClientRoutes.USING_LAYOUT_EFFECT}>Using Layout Effects</Item>
       <Item to={ClientRoutes.USING_CUSTOM_HOOKS}>Creating Your Own Hooks</Item>
     </Container>
   </ItemContainer>

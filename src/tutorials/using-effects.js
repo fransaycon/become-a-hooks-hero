@@ -2,18 +2,27 @@ import React, { useState, useEffect, useRef } from "react";
 import MayanCalendar from "../atoms/mayan-calendar";
 
 /**
- * One way to trigger side effects given a state change is by using the useEffect hooks.
+ * We add to the list of lifecycles we know.
+ * mounts, unmounts, updates
  *
- * useEffect runs on mount and given the second parameter of dependecies,
- * it will run the effect when one or more of the dependecies changed.
+ * Let's add browser paint which happens when the virtual dom is committed to the physical dom.
  *
- * It is good practice to declare everything that you will use inside the effect as dependencies.
- * Except for window functions and react state functions
+ * React makes use of a virtual dom to reconciliate all state changes and sideeffects
+ * and to help generate the next view.
+ *
+ * The virtual dom is an exact copy of the physical dom.
+ *
+ * At the end of every mount and update, the virtual dom is diffed to the physical dom
+ * then rerender all components that React considers changed.
+ *
+ * To have access to side effects, we use the hook useEffect.
+ *
+ * The defined effects in useEffect occurs AFTER browser paint.
  */
 
 const Timer = () => {
   const [time, setTime] = useState(2020);
-  const [timerStart, toggleTimer] = useState(false);
+  const [timerHasStarted, startTimer] = useState(false);
   const initialMount = useRef(true);
 
   useEffect(() => {
@@ -21,14 +30,14 @@ const Timer = () => {
   }, []);
 
   useEffect(() => {
-    if (timerStart && time > 0) {
+    if (timerHasStarted && time > 0) {
       const tick = setTimeout(() => setTime(t => t - 1), 500);
       return () => {
         console.log("Will print everytime this produces a new effect!");
         clearTimeout(tick);
       };
     }
-  }, [time, timerStart]);
+  }, [time, timerHasStarted]);
 
   useEffect(() => {
     console.log("Will print on mount and every update!");
@@ -44,7 +53,7 @@ const Timer = () => {
       <div>
         <span>Time Left: {time}</span>
       </div>
-      <button onClick={() => toggleTimer(true)}>Start Timer</button>
+      <button onClick={() => startTimer(true)}>Start Timer</button>
       {time !== 2012 && <MayanCalendar />}
     </div>
   );

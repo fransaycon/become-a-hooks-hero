@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Counter from "./using-state";
 
 /**
- * In jsx, shortcircuits / ternary expressions are possible.
+ * In jsx, shortcircuits / ternary operations are possible.
  *
  * Whenever a component is not chosen to be part of the render tree, it is considered unmounted.
  */
