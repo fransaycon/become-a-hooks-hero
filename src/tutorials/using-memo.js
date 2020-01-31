@@ -8,7 +8,7 @@ import React, { useState, useMemo, useRef } from "react";
  *
  * useMemo can only cache one state at a time.
  */
-const ClosestPrimeCalculator = () => {
+const PrimeCalculator = () => {
   const [num, setNum] = useState(0);
   const numberRef = useRef();
 
@@ -31,4 +31,4 @@ const ClosestPrimeCalculator = () => {
   );
 };
 
-export default ClosestPrimeCalculator;
+export default PrimeCalculator;

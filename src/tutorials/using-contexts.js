@@ -46,11 +46,11 @@ const Devils = () => {
   );
 };
 
-const Container = () => (
+const BlessingsContainer = () => (
   <BlessingsProvider>
     <Angels />
     <Devils />
   </BlessingsProvider>
 );
 
-export default Container;
+export default BlessingsContainer;
