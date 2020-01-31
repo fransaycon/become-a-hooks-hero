@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Become a React-Hooks Hero :cyclone:
 
-## Available Scripts
+:space_invader: This is a repository with full commented explanations on how to use the different hooks of the new Hook API of React.
+This contains several sample programs neatly separated and compiled into a main clickable application.
 
-In the project directory, you can run:
+This covers all available hooks except `useDebugValue`.
+Hopefully we get equivalent hooks for `getSnapshotBeforeUpdate` and `componentDidCatch` soon!
 
-### `yarn start`
+## Installation :bowtie:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After cloning, to run the project for the first time,
+Install all needed packages.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+yarn
+```
 
-### `yarn test`
+To start the local view,
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+yarn start
+```
 
-### `yarn build`
+By default the application should be ready at `localhost:3000`, provided there is no change.
+I've also included some vscode configurations that made my life easier so I encourage you to use that editor as well.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Checkpoint Answers
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+:question: For the checkpoint answers, (DO NOT READ THIS IF YOU WANT TO CHALLENGE YOUR LEARNING) :stuck_out_tongue_closed_eyes:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Checkpoint #1: :fire:
 
-### `yarn eject`
+Your goal is to keep the state changes that `<Counter>` fired.
+Since state is only persisted when the component is mounted, you just have to lift the state up to the
+container that contains the button that hides the `<Counter>` component. Then, pass the value and setter as props to the counter component.
+This way the state is persisted to the parent container of `<Counter>`, so even if `<Counter>` unmounts the state is still present at its container.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Checkpoint #2: :punch:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The console in useLayoutEffect will print first since it happens synchronously after browser paint.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Checkpoint #3: :shit:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+What's wrong with the custom hook is that we use `useState` to keep track of the values inside the input fields.
+Causing the component to rerender everytime the user types something in the user field.
+Since input itself has it's own behavior of updating the view outside React's ecosystem the best approach here is to use references.
+`useRef` to the rescue. Change state definitions to `useRef` and setters to `valueRef.current = <new value>` then set all access to `values`
+into `valueRef.current`. You may now remove the `value={...}` prop definition in the inputs since we are not controlling the value of
+the `<input>s` through React definitions anymore.
