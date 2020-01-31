@@ -15,6 +15,7 @@ A overwhelming drive to learn new things.
 But seriously, `Node v12`.
 
 To install node, go [here](https://nodejs.org/en/download/).
+And yarn. `npm install yarn -g`
 
 ## Installation :bowtie:
 
