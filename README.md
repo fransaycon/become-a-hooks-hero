@@ -6,6 +6,9 @@ This contains several sample programs neatly separated and compiled into a main 
 This covers all available hooks except `useDebugValue`.
 Hopefully we get equivalent hooks for `getSnapshotBeforeUpdate` and `componentDidCatch` soon!
 
+NOTE: You may use this for your self learning and internal trainings but for people out there that will take advantage of free resources
+and market it to people as paid, I simply won't allow it.
+
 ## Installation :bowtie:
 
 After cloning, to run the project for the first time,
