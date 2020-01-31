@@ -9,6 +9,13 @@ Hopefully we get equivalent hooks for `getSnapshotBeforeUpdate` and `componentDi
 NOTE: You may use this for your self learning and internal trainings but for people out there that will take advantage of free resources
 and market it to people as paid, I simply won't allow it.
 
+## Requirements
+
+A overwhelming drive to learn new things.
+But seriously, `Node v12`.
+
+To install node, go [here](https://nodejs.org/en/download/).
+
 ## Installation :bowtie:
 
 After cloning, to run the project for the first time,
